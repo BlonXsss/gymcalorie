@@ -1,0 +1,20 @@
+{
+  "name": "gym-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "sync:static": "node scripts/sync-deploy-static.mjs",
+    "deploy:cf": "node scripts/sync-deploy-static.mjs && wrangler deploy"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.28.0"
+  }
+}

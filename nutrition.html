@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker - Nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="nutrition">
+  <header class="site-header">
+    <div class="brand">
+      <h1>Nutrition & Calories</h1>
+      <p>Daily intake with weekly summary.</p>
+    </div>
+    <button id="menuToggleBtn" class="btn menu-toggle" aria-expanded="false" aria-controls="topNav">☰</button>
+    <nav id="topNav" class="top-nav">
+      <a href="./index.html">Dashboard</a>
+      <a href="./workout.html">Workout</a>
+      <a href="./nutrition.html">Nutrition</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card wide">
+      <h2>Daily Nutrition Input</h2>
+      <form id="nutritionForm" class="form-row">
+        <label>Date<input type="date" name="date" required></label>
+        <label>Calories<input type="number" name="calories" min="0" required></label>
+        <label>Protein (g)<input type="number" name="protein" min="0"></label>
+        <label>Carbs (g)<input type="number" name="carbs" min="0"></label>
+        <label>Fats (g)<input type="number" name="fats" min="0"></label>
+        <button type="submit" class="btn btn-accent">Save</button>
+      </form>
+      <div id="nutritionSummary" class="summary-grid"></div>
+      <div class="chart-wrap"><canvas id="caloriesChart"></canvas></div>
+      <div id="nutritionTable" class="data-table"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

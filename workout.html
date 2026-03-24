@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker - Workout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="workout">
+  <header class="site-header">
+    <div class="brand">
+      <h1>Workout Plan</h1>
+      <p>Editable Push/Pull/Legs/Chest+Back/Arms split.</p>
+    </div>
+    <button id="menuToggleBtn" class="btn menu-toggle" aria-expanded="false" aria-controls="topNav">☰</button>
+    <nav id="topNav" class="top-nav">
+      <a href="./index.html">Dashboard</a>
+      <a href="./workout.html">Workout</a>
+      <a href="./nutrition.html">Nutrition</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card wide">
+      <div class="section-title-row">
+        <h2>Workout Days (Day 1-4)</h2>
+        <button id="addDayBtn" class="btn btn-accent">+ Add Training Day</button>
+      </div>
+      <div id="workoutDaysContainer" class="days-container"></div>
+    </section>
+  </main>
+
+  <template id="dayTemplate">
+    <article class="day-card">
+      <header class="day-header">
+        <div class="day-info">
+          <input class="day-name-input" maxlength="45" aria-label="Day name">
+          <p class="day-meta"></p>
+        </div>
+        <button class="btn day-toggle-btn" aria-label="Toggle day">-</button>
+      </header>
+      <div class="exercise-list-wrap">
+        <div class="day-actions">
+          <button class="btn save-day-btn">Save Day</button>
+          <button class="btn add-exercise-btn">+ Add Exercise</button>
+          <button class="btn btn-danger remove-day-btn">Remove Day</button>
+        </div>
+        <div class="exercise-list"></div>
+      </div>
+    </article>
+  </template>
+
+  <template id="exerciseTemplate">
+    <article class="exercise-row">
+      <div class="exercise-header">
+        <input class="exercise-name" placeholder="Exercise name">
+        <select class="exercise-primary-muscle" aria-label="Primary muscle">
+          <option value="chest">Chest</option>
+          <option value="back">Back</option>
+          <option value="legs">Legs</option>
+          <option value="triceps">Triceps</option>
+          <option value="shoulders">Shoulders</option>
+        </select>
+        <label class="complete-check">
+          <input class="exercise-complete" type="checkbox">
+          Complete
+        </label>
+      </div>
+      <div class="exercise-fields">
+        <label>Sets<input class="exercise-sets" type="number" min="1" placeholder="Sets"></label>
+        <label>Reps<input class="exercise-reps" type="number" min="1" placeholder="Reps"></label>
+        <label>Weight (kg)<input class="exercise-weight" type="number" step="0.5" min="0" placeholder="Kg"></label>
+        <label>Notes<input class="exercise-notes" placeholder="Optional notes"></label>
+      </div>
+      <div class="exercise-actions">
+        <button class="btn save-ex-btn">Save</button>
+        <button class="btn up-btn" title="Move up">↑</button>
+        <button class="btn down-btn" title="Move down">↓</button>
+        <button class="btn btn-danger remove-ex-btn" title="Remove">Remove</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

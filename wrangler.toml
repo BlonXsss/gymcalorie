@@ -1,0 +1,9 @@
+# Cloudflare Workers — static site (your URL: https://steep-bar-d690.blonki1234.workers.dev/)
+# Deploy from this folder: npm run deploy:cf
+# Docs: https://developers.cloudflare.com/workers/static-assets/
+
+name = "steep-bar-d690"
+compatibility_date = "2025-03-20"
+
+[assets]
+directory = "./deploy-static"

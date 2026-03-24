@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="brand">
+      <h1>Gym Tracker</h1>
+      <p>Upper-body growth while cutting.</p>
+    </div>
+    <button id="menuToggleBtn" class="btn menu-toggle" aria-expanded="false" aria-controls="topNav">☰</button>
+    <nav id="topNav" class="top-nav">
+      <a href="./index.html">Dashboard</a>
+      <a href="./workout.html">Workout</a>
+      <a href="./nutrition.html">Nutrition</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>This Week Overview</h2>
+      <div id="dashboardStats" class="dashboard-grid"></div>
+      <div id="dashboardInsights" class="insights"></div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Actions</h2>
+      <div class="quick-links">
+        <a class="btn btn-accent" href="./workout.html">Go to Workout</a>
+        <a class="btn btn-accent" href="./nutrition.html">Go to Nutrition</a>
+        <a class="btn btn-accent" href="./progress.html">Go to Progress</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Smart Growth Suggestions</h2>
+      <div id="aiSuggestions" class="suggestions"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

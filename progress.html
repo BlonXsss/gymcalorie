@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker - Progress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body data-page="progress">
+  <header class="site-header">
+    <div class="brand">
+      <h1>Progress & PRs</h1>
+      <p>Weight trend, PR progression, and change highlights.</p>
+    </div>
+    <button id="menuToggleBtn" class="btn menu-toggle" aria-expanded="false" aria-controls="topNav">☰</button>
+    <nav id="topNav" class="top-nav">
+      <a href="./index.html">Dashboard</a>
+      <a href="./workout.html">Workout</a>
+      <a href="./nutrition.html">Nutrition</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card wide">
+      <h2>Body Metrics</h2>
+      <form id="weightForm" class="form-row">
+        <label>Date<input type="date" name="date" required></label>
+        <label>Body Weight (kg)<input type="number" step="0.1" name="weight" min="0" required></label>
+        <label>Body Fat % (optional)<input type="number" step="0.1" name="bodyFat" min="0" max="80"></label>
+        <button type="submit" class="btn btn-accent">Save</button>
+      </form>
+      <form id="stepsForm" class="form-row">
+        <label>Date<input type="date" name="date" required></label>
+        <label>Steps<input type="number" name="steps" min="1" required></label>
+        <button type="submit" class="btn">Save Steps</button>
+      </form>
+      <div class="chart-grid">
+        <div class="chart-wrap"><h3>Weight Trend</h3><canvas id="weightChart"></canvas></div>
+        <div class="chart-wrap"><h3>PR Trend</h3><canvas id="prChart"></canvas></div>
+        <div class="chart-wrap"><h3>Calories Trend</h3><canvas id="caloriesTrendChart"></canvas></div>
+        <div class="chart-wrap"><h3>Steps Trend</h3><canvas id="stepsChart"></canvas></div>
+      </div>
+      <div id="progressTable" class="data-table"></div>
+      <div id="prList" class="data-table"></div>
+      <div id="stepsTable" class="data-table"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

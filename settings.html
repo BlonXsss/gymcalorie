@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker - Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="settings">
+  <header class="site-header">
+    <div class="brand">
+      <h1>Settings</h1>
+      <p>Theme, muscle colors, and data controls.</p>
+    </div>
+    <button id="menuToggleBtn" class="btn menu-toggle" aria-expanded="false" aria-controls="topNav">☰</button>
+    <nav id="topNav" class="top-nav">
+      <a href="./index.html">Dashboard</a>
+      <a href="./workout.html">Workout</a>
+      <a href="./nutrition.html">Nutrition</a>
+      <a href="./progress.html">Progress</a>
+      <a href="./settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Theme</h2>
+      <button id="toggleThemeBtn" class="btn btn-accent">Toggle Dark / Light</button>
+    </section>
+
+    <section class="card wide">
+      <h2>Muscle Accent Colors</h2>
+      <form id="colorForm" class="form-row">
+        <label>Chest / Upper<input type="color" name="chest"></label>
+        <label>Back<input type="color" name="back"></label>
+        <label>Legs<input type="color" name="legs"></label>
+        <label>Triceps<input type="color" name="triceps"></label>
+        <label>Shoulders<input type="color" name="shoulders"></label>
+        <label>Calories / Progress<input type="color" name="calories"></label>
+        <button type="submit" class="btn">Save Colors</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Data</h2>
+      <button id="resetDataBtn" class="btn btn-danger">Reset All Data</button>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
